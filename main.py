@@ -85,7 +85,7 @@ def run_experiment():
     # 3. 初始化并训练模型
     lstm_trainer = LSTMTrainer(vocab_size=vocab_size, embedding_dim=embedding_dim)
     lstm_trainer.load_pretrained_embeddings(embedding_matrix) # 加载预训练权重
-    lstm_trainer.train(X_train_seq, y_train, epochs=100)
+    lstm_trainer.train(X_train_seq, y_train, epochs=20)
     
     # 4. 评估
     y_pred = lstm_trainer.predict(X_test_seq)

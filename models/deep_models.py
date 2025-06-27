@@ -51,7 +51,7 @@ class LSTMTrainer:
     def train(self, X_train, y_train, epochs=5, batch_size=64):
         print(f"在 {self.device} 上训练LSTM模型...")
         dataset = TensorDataset(torch.LongTensor(X_train), torch.LongTensor(y_train))
-        loader = DataLoader(dataset, shuffle=True, batch_size=batch_size)
+        loader = DataLoader(dataset, shuffle=True, batch_size=batch_size,num_workers=2)
 
         for epoch in range(epochs):
             self.model.train()
